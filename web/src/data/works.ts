@@ -72,10 +72,11 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
         items: [
           {
             name: 'Engine Overhauling Workshop',
-            meta: '2-day hands-on technical workshop',
+            meta: '2-day hands-on automotive workshop',
             tags: [
               'SAE',
               'Engine',
+              'Automotive',
               'Mentoring',
               'Mechanical',
             ],
@@ -86,6 +87,7 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
             meta: 'SAE GEC Wayanad',
             tags: [
               'Automotive',
+              'SAE',
               'Technical Activities',
             ],
             slug: 'automotive-activities',
@@ -108,6 +110,7 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
               'Program Coordinator',
               'MESA',
               'Event Management',
+              'Leadership',
             ],
             slug: 'yantra',
           },
@@ -118,7 +121,10 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
               'SAE',
               'MESA',
               'IEDC',
+              'Literature Club',
+              'Music Club',
               'HRD Cell',
+              'NSS',
             ],
             slug: 'student-leadership',
           },
@@ -131,35 +137,43 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
         id: 'technology',
         no: '03',
         title: 'Technology',
-        tagline: 'Digital Products · Web Development',
+        tagline: 'Programming · Web Development · Digital Products',
         items: [
           {
             name: 'KTU Connect',
             meta: 'Academic resource platform for KTU students',
             tags: [
               'Web Development',
+              'HTML',
+              'CSS',
+              'JavaScript',
               'Education',
-              'Digital Product',
             ],
+            link: 'https://github.com/eldhoyy/Ktuconnect',
             slug: 'ktu-connect',
           },
           {
-            name: 'Creative Technology',
-            meta: 'Exploring engineering through digital tools',
+            name: '3D Interactive Portfolio',
+            meta: 'Interactive personal portfolio',
             tags: [
-              'Technology',
-              'Problem Solving',
+              'React',
+              'TypeScript',
+              'Three.js',
+              'Vite',
             ],
+            link: 'https://github.com/eldhoyy/sen-3d-resume',
             slug: 'creative-technology',
           },
         ],
+        footer:
+          'Programming · Web development · Interactive experiences · Digital products',
       },
 
       {
         id: 'experience',
         no: '04',
         title: 'Experience',
-        tagline: 'Industry Exposure · Engineering',
+        tagline: 'Industry Exposure · Engineering · Entrepreneurship',
         items: [
           {
             name: 'Kerala Water Authority Internship',
