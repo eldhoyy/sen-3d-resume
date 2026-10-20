@@ -1779,3 +1779,26 @@ canvas {
     height: 13px;
   }
 }
+/* =========================================================
+   HERO SOCIAL — MAKE LOGOS CLICKABLE
+   ========================================================= */
+
+.hero-social-wrap {
+  position: relative;
+  z-index: 50;
+  pointer-events: auto;
+}
+
+.hero-socials {
+  position: relative;
+  z-index: 51;
+  pointer-events: auto;
+}
+
+.hero-social {
+  position: relative;
+  z-index: 52;
+  pointer-events: auto;
+  cursor: pointer;
+  touch-action: manipulation;
+}
