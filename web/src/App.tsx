@@ -1,11 +1,18 @@
 import { Suspense, useRef, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion'
+import {
+  motion,
+  useScroll,
+  useTransform,
+  type MotionValue,
+} from 'framer-motion'
 import * as THREE from 'three'
+
 import Scene from './scene/Scene'
 import NoiseOverlay from './ui/NoiseOverlay'
 import Resume from './ui/Resume'
 import Works from './ui/Works'
+import Connect from './ui/Connect'
 import LoadingScreen from './ui/LoadingScreen'
 import { useStore } from './store'
 
@@ -13,9 +20,17 @@ function Backdrop() {
   const setActive = useStore((s) => s.setActive)
 
   return (
-    <mesh position={[0, 0, -40]} onClick={() => setActive(null)}>
+    <mesh
+      position={[0, 0, -40]}
+      onClick={() => setActive(null)}
+    >
       <planeGeometry args={[600, 300]} />
-      <meshBasicMaterial transparent opacity={0} depthWrite={false} />
+
+      <meshBasicMaterial
+        transparent
+        opacity={0}
+        depthWrite={false}
+      />
     </mesh>
   )
 }
@@ -25,15 +40,20 @@ type Lang = 'en' | 'zh'
 const COPY = {
   en: {
     title: 'Eldho Paul Shajan',
+
     paragraphs: [
       'Mechanical Engineering student at Government Engineering College Wayanad, passionate about automotive engineering, technology, leadership and building things that create real impact.',
+
       'I explore the space between mechanical systems, student innovation, digital products and creative problem-solving — while preparing for a career in the automotive industry.',
     ],
   },
+
   zh: {
     title: 'Eldho Paul Shajan',
+
     paragraphs: [
       'Mechanical Engineering student at Government Engineering College Wayanad, passionate about automotive engineering, technology, leadership and building things that create real impact.',
+
       'I explore the space between mechanical systems, student innovation, digital products and creative problem-solving.',
     ],
   },
@@ -47,6 +67,7 @@ function Hero({
   cueOpacity: MotionValue<number>
 }) {
   const { title, paragraphs } = COPY[lang]
+
   const aboutRef = useRef(null)
 
   const { scrollYProgress } = useScroll({
@@ -60,10 +81,23 @@ function Hero({
     ['blur(0px)', 'blur(16px)']
   )
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    [1, 0]
+  )
 
-  const titleY = useTransform(scrollYProgress, [0, 1], [0, -96])
-  const bodyY = useTransform(scrollYProgress, [0, 1], [0, -52])
+  const titleY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, -96]
+  )
+
+  const bodyY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, -52]
+  )
 
   const titleSpacing = useTransform(
     scrollYProgress,
@@ -77,12 +111,18 @@ function Hero({
         className="about"
         lang={lang}
         ref={aboutRef}
-        style={{ filter: blur, opacity }}
+        style={{
+          filter: blur,
+          opacity,
+        }}
       >
         <div className="about-intro">
           <motion.h1
             className="about-title"
-            style={{ y: titleY, letterSpacing: titleSpacing }}
+            style={{
+              y: titleY,
+              letterSpacing: titleSpacing,
+            }}
           >
             {title}
           </motion.h1>
@@ -91,7 +131,9 @@ function Hero({
             <motion.p
               key={i}
               className="about-body"
-              style={{ y: bodyY }}
+              style={{
+                y: bodyY,
+              }}
             >
               {p}
             </motion.p>
@@ -101,10 +143,15 @@ function Hero({
 
       <motion.div
         className="scroll-cue"
-        style={{ opacity: cueOpacity }}
+        style={{
+          opacity: cueOpacity,
+        }}
         aria-hidden="true"
       >
-        <span className="scroll-cue-label">SCROLL</span>
+        <span className="scroll-cue-label">
+          SCROLL
+        </span>
+
         <span className="scroll-cue-track">
           <span className="scroll-cue-dot" />
         </span>
@@ -138,7 +185,9 @@ export default function App() {
 
   const worksRef = useRef(null)
 
-  const { scrollYProgress: worksProgress } = useScroll({
+  const {
+    scrollYProgress: worksProgress,
+  } = useScroll({
     target: worksRef,
     offset: ['start end', 'start center'],
   })
@@ -146,7 +195,10 @@ export default function App() {
   const fogBg = useTransform(
     worksProgress,
     [0, 1],
-    ['rgba(8, 11, 18, 0)', 'rgba(8, 11, 18, 0.41)']
+    [
+      'rgba(8, 11, 18, 0)',
+      'rgba(8, 11, 18, 0.41)',
+    ]
   )
 
   const scrimOpacity = useTransform(
@@ -184,7 +236,9 @@ export default function App() {
 
       <div className="scene-bg">
         <Canvas
-          shadows={{ type: THREE.PCFShadowMap }}
+          shadows={{
+            type: THREE.PCFShadowMap,
+          }}
           dpr={[1, 1.5]}
           camera={{
             position: [0, 5, 19],
@@ -196,10 +250,14 @@ export default function App() {
             antialias: false,
             stencil: false,
             depth: true,
-            toneMapping: THREE.ACESFilmicToneMapping,
+            toneMapping:
+              THREE.ACESFilmicToneMapping,
           }}
         >
-          <color attach="background" args={['#0a0e16']} />
+          <color
+            attach="background"
+            args={['#0a0e16']}
+          />
 
           <Suspense fallback={null}>
             <Backdrop />
@@ -210,37 +268,61 @@ export default function App() {
 
       <motion.div
         className="scrim"
-        style={{ opacity: scrimOpacity }}
+        style={{
+          opacity: scrimOpacity,
+        }}
         aria-hidden="true"
       />
 
       <motion.div
         className="stage-fog"
-        style={{ background: fogBg }}
+        style={{
+          background: fogBg,
+        }}
         aria-hidden="true"
       />
 
       <motion.div
         className="glass-rail"
-        style={{ opacity: railOpacity }}
+        style={{
+          opacity: railOpacity,
+        }}
         aria-hidden="true"
       />
 
       <motion.div
         className="hero-chrome"
-        style={{ opacity: heroChromeOpacity }}
+        style={{
+          opacity: heroChromeOpacity,
+        }}
         aria-hidden="true"
       >
         <div className="hero-frame" />
 
-        <span className="hero-mark tl">+</span>
-        <span className="hero-mark tr">+</span>
-        <span className="hero-mark bl">+</span>
-        <span className="hero-mark br">+</span>
+        <span className="hero-mark tl">
+          +
+        </span>
+
+        <span className="hero-mark tr">
+          +
+        </span>
+
+        <span className="hero-mark bl">
+          +
+        </span>
+
+        <span className="hero-mark br">
+          +
+        </span>
 
         <div className="hero-meta hm-tl">
-          <span className="hm-name">Eldho Paul Shajan</span>
-          <span>Mechanical Engineering</span>
+          <span className="hm-name">
+            Eldho Paul Shajan
+          </span>
+
+          <span>
+            Mechanical Engineering
+          </span>
         </div>
 
         <div className="hero-meta hm-tr">
@@ -270,6 +352,8 @@ export default function App() {
           lang={lang}
           innerRef={worksRef}
         />
+
+        <Connect />
       </main>
     </>
   )
