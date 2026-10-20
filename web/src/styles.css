@@ -1531,3 +1531,166 @@ canvas {
     font-size: 11.5px;
   }
 }
+/* =========================================================
+   CONNECT SECTION
+   ========================================================= */
+
+.connect-section {
+  position: relative;
+  width: 100%;
+  padding: 140px 6vw 110px;
+  z-index: 5;
+}
+
+.connect-inner {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.connect-heading {
+  max-width: 720px;
+  margin-bottom: 55px;
+}
+
+.connect-kicker {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  opacity: 0.55;
+}
+
+.connect-heading h2 {
+  margin: 0;
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.connect-heading p {
+  max-width: 620px;
+  margin-top: 28px;
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.65;
+}
+
+.connect-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.connect-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  padding: 28px;
+  color: inherit;
+  text-decoration: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.connect-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.connect-label {
+  display: block;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  opacity: 0.5;
+}
+
+.connect-value {
+  margin-top: auto;
+  padding-right: 35px;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  overflow-wrap: anywhere;
+}
+
+.connect-arrow {
+  position: absolute;
+  top: 26px;
+  right: 28px;
+
+  font-size: 22px;
+
+  opacity: 0.55;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.connect-card:hover .connect-arrow {
+  transform: translate(3px, -3px);
+  opacity: 1;
+}
+
+
+/* =========================================================
+   CONNECT — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .connect-section {
+    padding: 100px 22px 75px;
+  }
+
+  .connect-heading {
+    margin-bottom: 38px;
+  }
+
+  .connect-heading h2 {
+    font-size: clamp(42px, 13vw, 64px);
+  }
+
+  .connect-heading p {
+    margin-top: 22px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .connect-links {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .connect-card {
+    min-height: 125px;
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .connect-value {
+    font-size: 16px;
+  }
+
+  .connect-arrow {
+    top: 22px;
+    right: 24px;
+  }
+}
