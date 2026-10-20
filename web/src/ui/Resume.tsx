@@ -14,9 +14,9 @@ const RESUME: ResumeEntry[] = [
     place: 'Government Engineering College Wayanad',
     role: 'B.Tech Mechanical Engineering',
     points: [
-      'Mechanical Engineering student with a strong interest in automotive engineering.',
-      'Focused on developing practical technical skills alongside academics.',
-      'Interested in engineering design, automotive systems, technology and innovation.',
+      'Mechanical Engineering student with a strong interest in automotive engineering and the automobile industry.',
+      'Building practical knowledge in mechanical systems, engineering design, technology and problem solving.',
+      'Developing technical, leadership and project experience alongside academics.',
     ],
   },
 
@@ -27,8 +27,9 @@ const RESUME: ResumeEntry[] = [
     points: [
       'Active member of the SAE student chapter at GEC Wayanad.',
       'Contributed to automotive-focused technical activities and student initiatives.',
-      'Mentored participants during the Engine Overhauling Workshop.',
-      'Delivered a practical introductory session on engine overhauling.',
+      'Mentored participants during the two-day Engine Overhauling Workshop.',
+      'Delivered a practical introductory session on engine overhauling and engine components.',
+      'Developing hands-on exposure to automotive engineering through SAE activities.',
     ],
   },
 
@@ -44,6 +45,7 @@ const RESUME: ResumeEntry[] = [
       'HRD Cell Committee Member.',
       'NSS Volunteer.',
       'Campus Ambassador — E-Cell, IIT Bombay.',
+      'Earlier served as School Chairman and coordinated multiple school-level programmes.',
     ],
   },
 
@@ -52,8 +54,9 @@ const RESUME: ResumeEntry[] = [
     place: 'Kerala Water Authority',
     role: 'Engineering Intern',
     points: [
-      'Completed a one-week internship at Kerala Water Authority.',
-      'Gained exposure to a professional engineering environment and practical systems.',
+      'Completed a one-week engineering internship at Kerala Water Authority.',
+      'Gained exposure to a professional engineering environment and practical engineering systems.',
+      'Developed an understanding of workplace discipline and real-world engineering activities.',
     ],
   },
 
@@ -63,9 +66,22 @@ const RESUME: ResumeEntry[] = [
     role: 'Builder · Coordinator · Mentor',
     points: [
       'Program Coordinator for YANTRA, the Mechanical Department technical fest.',
-      'Conducted a two-day SAE Engine Overhauling Workshop.',
-      'Building KTU Connect, an academic resource platform for KTU students.',
-      'Interested in combining mechanical engineering with technology and digital products.',
+      'Conducted and mentored participants during a two-day SAE Engine Overhauling Workshop.',
+      'Building KTU Connect, a digital academic resource platform for KTU students.',
+      'Exploring web development, programming and digital products alongside mechanical engineering.',
+    ],
+  },
+
+  {
+    period: '2024 – Present',
+    place: 'Technical Skills & Programming',
+    role: 'Programming · Web Development · Digital Tools',
+    points: [
+      'Programming Languages: Python, C++, Java, JavaScript, TypeScript and SQL.',
+      'Web Technologies: HTML and CSS.',
+      'Frameworks & Libraries: React, Three.js and Vite.',
+      'Tools & Platforms: Git, GitHub and Vercel.',
+      'Building and experimenting with websites, digital products and technical projects.',
     ],
   },
 ]
