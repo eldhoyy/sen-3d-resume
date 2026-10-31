@@ -8,6 +8,9 @@ interface ResumeEntry {
   points?: string[]
 }
 
+// Keep the number of entries exactly aligned with FOCUS_POINTS.
+// The GLB currently provides five timeline focus anchors, so related
+// technical-skills content is grouped into the Projects & Technical Activities entry.
 const RESUME: ResumeEntry[] = [
   {
     period: '2025 – Present',
@@ -19,7 +22,6 @@ const RESUME: ResumeEntry[] = [
       'Developing technical, leadership and project experience alongside academics.',
     ],
   },
-
   {
     period: '2025 – Present',
     place: 'SAE GEC Wayanad',
@@ -32,7 +34,6 @@ const RESUME: ResumeEntry[] = [
       'Developing hands-on exposure to automotive engineering through SAE activities.',
     ],
   },
-
   {
     period: '2025 – Present',
     place: 'Student Leadership & Campus Activities',
@@ -48,7 +49,6 @@ const RESUME: ResumeEntry[] = [
       'Earlier served as School Chairman and coordinated multiple school-level programmes.',
     ],
   },
-
   {
     period: '2026',
     place: 'Kerala Water Authority',
@@ -59,7 +59,6 @@ const RESUME: ResumeEntry[] = [
       'Developed an understanding of workplace discipline and real-world engineering activities.',
     ],
   },
-
   {
     period: '2025 – Present',
     place: 'Projects & Technical Activities',
@@ -68,20 +67,9 @@ const RESUME: ResumeEntry[] = [
       'Program Coordinator for YANTRA, the Mechanical Department technical fest.',
       'Conducted and mentored participants during a two-day SAE Engine Overhauling Workshop.',
       'Building KTU Connect, a digital academic resource platform for KTU students.',
-      'Exploring web development, programming and digital products alongside mechanical engineering.',
-    ],
-  },
-
-  {
-    period: '2024 – Present',
-    place: 'Technical Skills & Programming',
-    role: 'Programming · Web Development · Digital Tools',
-    points: [
       'Programming Languages: Python, C++, Java, JavaScript, TypeScript and SQL.',
-      'Web Technologies: HTML and CSS.',
-      'Frameworks & Libraries: React, Three.js and Vite.',
+      'Web Technologies: HTML and CSS; Frameworks & Libraries: React, Three.js and Vite.',
       'Tools & Platforms: Git, GitHub and Vercel.',
-      'Building and experimenting with websites, digital products and technical projects.',
     ],
   },
 ]
@@ -99,27 +87,15 @@ const containerV = {
 }
 
 const itemV = {
-  hidden: {
-    opacity: 0,
-    y: 26,
-  },
+  hidden: { opacity: 0, y: 26 },
   show: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.75,
-      ease: EASE,
-    },
+    transition: { duration: 0.75, ease: EASE },
   },
 }
 
-function Entry({
-  entry,
-  index,
-}: {
-  entry: ResumeEntry
-  index: number
-}) {
+function Entry({ entry, index }: { entry: ResumeEntry; index: number }) {
   return (
     <motion.div
       className="tl-entry"
@@ -127,52 +103,25 @@ function Entry({
       variants={containerV}
       initial="hidden"
       whileInView="show"
-      viewport={{
-        once: true,
-        margin: '-12% 0px -12% 0px',
-      }}
+      viewport={{ once: true, margin: '-12% 0px -12% 0px' }}
     >
-      <motion.span
-        className="tl-dot"
-        variants={itemV}
-        aria-hidden="true"
-      />
-
+      <motion.span className="tl-dot" variants={itemV} aria-hidden="true" />
       <div className="tl-body">
-        <motion.div
-          className="tl-period"
-          variants={itemV}
-        >
+        <motion.div className="tl-period" variants={itemV}>
           {entry.period}
         </motion.div>
-
-        <motion.div
-          className="tl-head"
-          variants={itemV}
-        >
-          <h3 className="tl-place">
-            {entry.place}
-          </h3>
+        <motion.div className="tl-head" variants={itemV}>
+          <h3 className="tl-place">{entry.place}</h3>
         </motion.div>
-
         {entry.role && (
-          <motion.div
-            className="tl-role"
-            variants={itemV}
-          >
+          <motion.div className="tl-role" variants={itemV}>
             {entry.role}
           </motion.div>
         )}
-
         {entry.points && (
-          <motion.ul
-            className="tl-points"
-            variants={itemV}
-          >
+          <motion.ul className="tl-points" variants={itemV}>
             {entry.points.map((point, i) => (
-              <li key={i}>
-                {point}
-              </li>
+              <li key={i}>{point}</li>
             ))}
           </motion.ul>
         )}
@@ -181,42 +130,21 @@ function Entry({
   )
 }
 
-export default function Resume({
-  lang,
-}: {
-  lang: 'en' | 'zh'
-}) {
+export default function Resume({ lang: _lang }: { lang: 'en' | 'zh' }) {
   return (
     <section className="resume" lang="en">
       <motion.h2
         className="resume-title"
-        initial={{
-          opacity: 0,
-          y: 20,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{
-          once: true,
-          margin: '-10% 0px',
-        }}
-        transition={{
-          duration: 0.7,
-          ease: EASE,
-        }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-10% 0px' }}
+        transition={{ duration: 0.7, ease: EASE }}
       >
         Experience
       </motion.h2>
-
       <div className="timeline">
         {RESUME.map((entry, index) => (
-          <Entry
-            key={index}
-            entry={entry}
-            index={index}
-          />
+          <Entry key={index} entry={entry} index={index} />
         ))}
       </div>
     </section>
