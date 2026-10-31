@@ -42,7 +42,6 @@ const RESUME: ResumeEntry[] = [
       'MESA ExeCom — Program Coordinator.',
       'IEDC ExeCom Member.',
       'Literature Club ExeCom Member.',
-      'Music Club ExeCom — Technical Coordinator.',
       'HRD Cell Committee Member.',
       'NSS Volunteer.',
       'Campus Ambassador — E-Cell, IIT Bombay.',
